@@ -1,0 +1,15 @@
+﻿@using homework_040119_ImageUploading.Models
+@model SubmitMessageViewModel
+@{
+    ViewBag.Title = "SubmitMessage";
+}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">
+        <h3>Thank you for uploading your images, here's the link to share with your friends:</h3>
+        <br />
+        <h3>@Model.Link</h3>
+        <br />
+        <h3>Make sure to give them the password of "@Model.Password"</h3>
+    </div>
+</div>
+

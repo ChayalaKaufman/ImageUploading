@@ -1,0 +1,31 @@
+﻿@using homework_040119_ImageUploading.Models
+@using ImageUploading.Data
+@model ImageViewModel
+@{
+    ViewBag.Title = "ViewImages";
+}
+@if (!Model.BeenHere)
+{
+    <h3>Please enter the password:</h3>
+    <input type="text" class="form-control" placeholder="Password" id="password" />
+    <br />
+    <input type="hidden" id="realpw" value="@Model.Image.Password" />
+    <button class="btn btn-primary" id="submit">Submit</button>
+}
+else
+{
+   <input type="hidden" value="beenHere" id="beenHere"/>
+}
+
+<div>
+    <input type="hidden" id="fileName" value="/UploadedImages/@Model.Image.FileName" />
+    <img id="img" style="width: 400px;" />
+    <input type="hidden" id="num" value="@Model.Image.Views" />
+    <h2 id="views"></h2>
+</div>
+
+<div id="error"></div>
+
+@section scripts{
+    <script src="/Scripts/images.js"></script>
+}
